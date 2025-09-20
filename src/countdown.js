@@ -17,6 +17,16 @@ function countdownTimer(startTime, interval) {
   // Log the remaining time and decrement it
   // Stop the timer when time reaches 0
   // Return the timer ID for validation
+  let remainingTime = startTime;
+  const startTime = 5;
+  const interval = 1000;
+  const timerId = countdownTimer(startTime, interval);
+  if (remainingTime > 0) {
+    remainingTime--;
+    console.log("$[remainingTime} seconds remaining")
+  } else {
+    clearInterval(timerId)
+  }
 }
 
 module.exports = { countdownTimer };
