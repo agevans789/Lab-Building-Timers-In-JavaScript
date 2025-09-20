@@ -18,15 +18,15 @@ function countdownTimer(startTime, interval) {
   // Stop the timer when time reaches 0
   // Return the timer ID for validation
   let remainingTime = startTime;
-  const startTime = 5;
-  const interval = 1000;
-  const timerId = countdownTimer(startTime, interval);
+  const timerId = setInterval(() {
   if (remainingTime > 0) {
-    remainingTime--;
+    remainingTime -= interval;
     console.log("$[remainingTime} seconds remaining")
   } else {
     clearInterval(timerId)
   }
+}, interval);
+return timerId
 }
 
 module.exports = { countdownTimer };
