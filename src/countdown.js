@@ -17,11 +17,11 @@ function countdownTimer(startTime, interval) {
   // Log the remaining time and decrement it
   // Stop the timer when time reaches 0
   // Return the timer ID for validation
-  let remainingTime = startTime;
+  const startTime = 5;
+  const interval = 1000;
   const timerId = setInterval(() {
-  if (remainingTime > 0) {
-    remainingTime -= interval;
-    console.log("$[remainingTime} seconds remaining")
+  for (let i = startTime; i > 0; i--) {
+    console.log("${startTime} seconds remaining")
   } else {
     clearInterval(timerId)
   }
