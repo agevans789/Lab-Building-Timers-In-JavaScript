@@ -14,6 +14,23 @@ function delayedReminder(message, delay) {
   // Return a promise
   // Use setTimeout to log the message after the specified delay
   // Resolve the promise once the message is logged
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(message);
+      resolve();
+    }, delay);
+  });
+  /**
+   * Custom implementation of setTimeout.
+   * This is a simple wrapper around the native setTimeout for demonstration.
+   * @param {Function} callback - The function to execute after the delay.
+   * @param {number} delay - The delay in milliseconds.
+   * @returns {number} The timeout ID.
+   */
+  function customSetTimeout(callback, delay) {
+    return setTimeout(callback, delay);
+  };
+  resolve();
 }
 
 module.exports = { delayedReminder };
